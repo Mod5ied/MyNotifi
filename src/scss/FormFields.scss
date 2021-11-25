@@ -1,0 +1,232 @@
+@import "./presets";
+
+@media (max-width: 780px) {
+  #body {
+    @include gridCenter;
+    background: hsl(0, 0%, 90%);
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+
+    .section1 {
+      @include flexLayout(column);
+      @include row(center);
+      @include column(center);
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      z-index: 95;
+      background: #001f3d;
+
+      h1 {
+        width: 40%;
+        font: 500 2.4rem $font-secondary;
+        color: #e5e5e5;
+        text-align: center;
+        margin: 4rem auto;
+        position: relative;
+        bottom: 2.5rem;
+
+        #myImage {
+          width: 1.3rem;
+          height: 2rem;
+          transform: rotate(-35deg);
+          position: relative;
+          bottom: 6px;
+          right: 8px;
+        }
+      }
+      #reuter {
+        font: 500 .9rem $font-primary;
+        text-align: center;
+        position: relative;
+        top: 27%;
+        color: #e5e5e5;
+        // animate.css
+        --animate-repeat: 2;
+        animation-duration: 1s;
+        animation-delay: 2s;
+      }
+    }
+    .mainHidden {
+      display: none;
+    }
+
+    #main {
+      @include flexLayout(column);
+      @include column(center);
+      @include row(center);
+      width: 80%;
+      height: 70%;
+      gap: 2rem;
+      padding: 2.1rem;
+      border: 1px solid hsla(0, 0%, 10%, 0.28);
+      border-radius: 0.4rem;
+      background: hsl(0, 0%, 97%);
+      position: relative;
+      z-index: 94;
+
+      #section2 {
+        @include flexLayout(column);
+        @include column(center);
+        gap: 0.5rem;
+
+        h1 {
+          font: 700 2rem $font-secondary;
+          text-align: center;
+        }
+        #myImage {
+          width: 1.3rem;
+          height: 2rem;
+          transform: rotate(-35deg);
+          position: relative;
+          bottom: 6px;
+          right: 8px;
+        }
+        #dashImage {
+          display: none;
+        }
+        #details {
+          font: 400 1rem $font-primary;
+        }
+      }
+      #para {
+        font: 700 0.9rem $font-primary;
+      }
+      #forgot {
+        font: 500 0.9rem $font-primary;
+        text-align: center;
+      }
+      form {
+        @include flexLayout(column);
+        height: 60%;
+        gap: 2rem;
+
+        .input {
+          border: 1px solid #1a1a1a81;
+          border-radius: 1.2rem;
+          padding: 0.5rem 1rem;
+          background: #fff;
+          font: 300 0.98rem $font-primary;
+        }
+        #btn {
+          border: 2px solid transparent;
+          padding: 0.5rem;
+          background: #135bbf;
+          color: #fff;
+          font: 400 16px $font-primary;
+        }
+        #btn:focus {
+          background: hsl(0, 0%, 97%);
+          border: 2px solid #135bbf;
+          color: #135bbf;
+          outline: none;
+        }
+        #errMsg{
+          font: 400 1rem $font-primary;
+        }
+      }
+    }
+    
+  }
+  #body::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: hsl(0, 0%, 99%);
+    z-index: 1;
+  }
+}
+@media (min-width: 1024px) {
+  #body {
+    @include gridCenter;
+    height: 100vh;
+    background: hsl(0, 0%, 98%);
+
+    #section1 {
+      display: none;
+    }
+    #main {
+      @include flexLayout(row);
+      @include row(space-between);
+      gap: 5rem;
+      width: 90%;
+      height: 90%;
+      padding: 2rem;
+      border-radius: 0.4rem;
+      // background: hsl(0, 0%, 96%);
+
+      #section2 {
+        @include flexLayout(column);
+        @include column(flex-start);
+        gap: 0.5rem;
+
+        h1 {
+          font: 700 2.5rem $font-secondary;
+          color: #0c2f61b9;
+        }
+        #myImage {
+          width: 1.3rem;
+          height: 2rem;
+          transform: rotate(-30deg);
+          position: relative;
+          bottom: 6px;
+          right: 11px;
+        }
+        #dashImage {
+          width: 39rem;
+          height: 30rem;
+          border-radius: 0.4rem;
+        }
+        #details {
+          font: 500 1rem $font-primary;
+          color: #0c2f61b9;
+        }
+      }
+      #para {
+        font: 400 0.8rem $font-primary;
+      }
+      #forgot {
+        font: 400 0.8rem $font-primary;
+      }
+
+      form {
+        @include gridCenter;
+        width: 26%;
+        height: 65%;
+        margin: auto 0;
+        padding: 0.5rem;
+        border-radius: 0.4rem;
+        border: 1px solid hsla(0, 0%, 80%, 0.623);
+        gap: 1rem;
+        background: hsl(0, 0%, 100%);
+
+        input {
+          width: 80%;
+          height: 70%;
+          padding: 0 1rem;
+          border-radius: 0.4rem;
+          font-size: 0.8rem;
+        }
+        #btn {
+          width: 50%;
+          margin-top: 0.4rem;
+          padding: 0.5rem;
+          border: 2px solid transparent;
+          border-radius: 0.4rem;
+          background: #135bbf;
+          color: #fff;
+          font: 400 16px $font-primary;
+        }
+        #btn:focus {
+          background: hsl(0, 0%, 97%);
+          border: 2px solid #135bbf;
+          color: #135bbf;
+        }
+      }
+    }
+  }
+}

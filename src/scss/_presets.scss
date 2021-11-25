@@ -1,0 +1,24 @@
+* {
+  // outline: 1px solid red !important; 
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flexLayout($direction) {
+  display: flex;
+  flex-flow: $direction;
+}
+@mixin row($layout) {
+  justify-content: $layout;
+}
+@mixin column($layout) {
+  align-content: $layout;
+}
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+$font-primary: 'Rubik', sans-serif;
+$font-secondary: 'Comfortaa', cursive;

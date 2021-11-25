@@ -1,0 +1,416 @@
+@import "./presets";
+
+@media (max-width: 780px) {
+  #main {
+    @include flexLayout(column);
+    @include column(space-between);
+    @include row(center);
+    gap: 3.5rem;
+    // height: 100%;
+    padding: 0 1.5rem;
+    background: hsl(0, 0%, 95%);
+    overflow: hidden;
+
+    .mobileHidden {
+      display: none;
+    }
+
+    #sec1 {
+      @include flexLayout(column);
+      @include row(center);
+      gap: 1rem;
+      position: relative;
+      z-index: 90;
+
+      nav {
+        @include flexLayout(row);
+        @include row(flex-end);
+
+        #calender {
+          font-size: 1.3rem;
+          color: #fffefec0;
+          padding: 0.5rem;
+          border: 1px solid #135bbf;
+          border-radius: 1.2rem;
+          background: #00295242;
+          position: relative;
+          top: 10%;
+        }
+        #calender:hover {
+          background-color: #2044689f;
+        }
+        // timetable spot
+        .fade-enter-active,
+        .fade-leave-active {
+          transition: opacity 0.5s;
+        }
+        .fade-enter,
+        .fade-leave-to {
+          opacity: 0;
+        }
+        #timetable {
+          @include flexLayout(column);
+          @include column(center);
+          gap: 1rem;
+          width: 20rem;
+          height: 320px;
+          padding: 2rem 1rem;
+          border: 1px solid rgba(0, 0, 0, 0.322);
+          border-radius: 0.5rem;
+          background: hsla(0, 0%, 0%, 0.4);
+          position: absolute;
+          top: 42%;
+          right: -1%;
+          z-index: 3;
+
+          #tableElems {
+            @include flexLayout(row);
+            @include row(space-between);
+            background: hsl(0, 0%, 84%);
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+
+            span {
+              @include gridCenter;
+              width: 40%;
+              border: 1px solid black;
+              padding: 0.2rem;
+              border-radius: 0.4rem;
+              text-align: center;
+              font: 500 0.9rem $font-primary;
+            }
+            .courses {
+              @include gridCenter;
+              width: 50%;
+              border: 1px solid black;
+              padding: 0.2rem;
+              font: 500 0.9rem $font-primary;
+            }
+          }
+          #tableElems:hover,
+          #tableElems:focus {
+            transition: all 0.5s ease-in-out;
+            transform: scale(0.98);
+            background: hsla(0, 0%, 0%, 0.4);
+            span,
+            .courses {
+              background: hsl(0, 0%, 92%);
+            }
+          }
+        }
+      }
+      #infoArea {
+        @include flexLayout(column);
+        @include column(center);
+        @include row(center);
+
+        #day {
+          font: 500 1rem $font-secondary;
+          color: #fffefec0;
+          text-align: center;
+        }
+        #containBell {
+          @include gridCenter;
+
+          #bell {
+            font-size: 1.3rem;
+            color: #a78206;
+          }
+        }
+        #course {
+          font: 600 2rem $font-primary;
+          text-align: center;
+          color: #fffefec0;
+        }
+        #info {
+          font: 400 1rem $font-primary;
+          color: #fffefec0;
+          text-align: center;
+        }
+      }
+    }
+    #sec2 {
+      @include gridCenter;
+      position: relative;
+      z-index: 2;
+      background: hsl(0, 0%, 99%);
+      border-radius: 0.4rem;
+
+      #timeImage {
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        border: 1px solid hsla(0, 0%, 95%, 0.534);
+        background: hsl(0, 0%, 95%);
+        width: 100%;
+      }
+      #timeArea {
+        font: 500 2rem $font-primary;
+        color: #f0ad4e;
+
+        #bell {
+          font-size: 1.5rem;
+          --animate-repeat: 2;
+        }
+      }
+      .mobileHidden {
+        display: none;
+      }
+    }
+    #sec3 {
+      @include flexLayout(row);
+      @include column(center);
+      width: 100%;
+      gap: 1rem;
+      background: hsla(0, 0%, 0%, 0.1);
+      border-radius: 0.4rem;
+      padding: 1rem;
+      position: relative;
+      z-index: 95;
+
+      #contain {
+        @include flexLayout(column);
+        @include column(flex-start);
+      }
+      #info {
+        font-size: 1.5rem;
+        color: #a78206;
+      }
+      p {
+        font: 400 0.8rem $font-primary;
+        color: hsl(0, 0%, 20%);
+      }
+    }
+  }
+  #main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    background: #002952;
+    z-index: 1;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  
+}
+@media (min-width: 1024px) {
+  #main {
+    @include flexLayout(row-reverse);
+    @include column(center);
+    height: 100vh;
+    padding: 0 5rem;
+    // gap: 2rem;
+    box-sizing: content-box;
+    overflow: hidden;
+    position: relative;
+
+    #sec1 {
+      @include flexLayout(column);
+      @include row(center);
+      flex: 50%;
+      gap: 2rem;
+      max-height: 80%;
+      border-radius: 0.4rem;
+      background: hsla(0, 0%, 99%, 0.048);
+      border: 1px solid hsla(0, 0%, 99%, 0.048);
+      box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 24%, 0.288);
+      position: relative;
+      top: 5%;
+      z-index: 90;
+
+      nav {
+        @include flexLayout(row);
+        @include row(space-between);
+        @include column(center);
+        padding: 0 2rem;
+
+        .mobileHidden {
+          @include gridCenter;
+          background: #043b72c0;
+          padding: 0.5rem;
+          border-radius: 1rem;
+          font: 500 0.9rem $font-primary;
+          color: #fffefec0;
+          color: #f0ad4e;
+        }
+        #calender {
+          font-size: 1.4rem;
+          color: #fffefec0;
+          padding: 0.4rem;
+          border: 1px solid #135bbf;
+          border-radius: 1rem;
+          background-color: #204468b2;
+        }
+        #calender:hover {
+          border: 1px solid transparent;
+        }
+        .fade-enter-active,
+        .fade-leave-active {
+          transition: opacity 0.5s;
+        }
+        .fade-enter,
+        .fade-leave-to {
+          opacity: 0;
+        }
+        #timetable {
+          @include flexLayout(column);
+          @include column(center);
+          gap: 1rem;
+          width: 500px;
+          height: 350px;
+          padding: 2rem;
+          border: 1px solid black;
+          border-radius: 0.5rem;
+          background: hsl(0, 0%, 84%);
+          position: absolute;
+          right: 10%;
+          top: 42%;
+          z-index: 91;
+
+          #tableElems {
+            @include flexLayout(row);
+            @include row(space-between);
+            background: hsl(0, 0%, 84%);
+            border: 1px solid black;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+
+            span {
+              @include gridCenter;
+              width: 40%;
+              border: 1px solid black;
+              padding: 0.2rem;
+              border-radius: 0.4rem;
+              text-align: center;
+              font: 500 0.9rem $font-primary;
+            }
+            .courses {
+              @include gridCenter;
+              width: 50%;
+              border: 1px solid black;
+              padding: 0.2rem;
+              font: 500 0.9rem $font-primary;
+            }
+          }
+          #tableElems:hover,
+          #tableElems:focus {
+            transition: all 0.5s ease-in-out;
+            transform: scale(0.98);
+            background: hsla(0, 0%, 0%, 0.4);
+            span,
+            .courses {
+              background: hsl(0, 0%, 92%);
+            }
+          }
+        }
+      }
+      #infoArea {
+        @include gridCenter;
+        position: relative;
+        top: 10%;
+        gap: 2rem;
+
+        #day {
+          display: none;
+        }
+        #containBell {
+          display: none;
+        }
+        #course {
+          font: 600 2rem $font-primary;
+          color: #fffefec0;
+          text-decoration: underline;
+        }
+        #time {
+          font: 500 1.5rem $font-primary;
+          color: #fffefec0;
+        }
+        #timeArea {
+          font: 500 1.8rem $font-primary;
+          color: #fffefec0;
+          color: #f0ad4e;
+
+          #bell {
+            font-size: 1.2rem;
+            --animate-repeat: 3;
+          }
+        }
+      }
+    }
+    #sec2 {
+      @include gridCenter;
+      flex: 50%;
+      gap: 1rem;
+      padding: 4rem;
+      position: relative;
+      z-index: 90;
+
+      #timeImage {
+        height: 80%;
+        width: 100%;
+        border-radius: 0.4rem;
+        border: 1px solid hsla(0, 0%, 99%, 0.048);
+        box-shadow: 0 1rem 2rem 0 hsla(0, 0%, 24%, 0.288);
+      }
+      #timeArea {
+        @include flexLayout(row);
+        gap: 0.5rem;
+        font: 500 2rem $font-primary;
+        color: #fffefec0;
+        text-align: center;
+        position: relative;
+        bottom: 95%;
+        display: none;
+
+        #bell {
+          font-size: 1.2rem;
+          --animate-repeat: 5;
+        }
+      }
+      #infoArea {
+        @include flexLayout(row);
+        @include row(center);
+        gap: 0.5rem;
+        background: #043b72c0;
+        border-radius: 0.5rem;
+        position: relative;
+        bottom: 95%;
+        width: 100%;
+        padding: 0.4rem;
+
+        #contain {
+          @include flexLayout(column);
+          @include column(flex-start);
+        }
+        #info {
+          font-size: 1.3rem;
+          color: #a78206;
+        }
+        p {
+          font: 400 0.8rem $font-primary;
+          color: #fffefec0;
+        }
+      }
+    }
+
+    .deskHidden {
+      display: none;
+    }
+  }
+  #main::before {
+    content: "";
+    height: 75rem;
+    position: absolute;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 5%;
+    background: #002952;
+    z-index: 1;
+    transform: rotate(40deg);
+    overflow: hidden;
+  }
+}
