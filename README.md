@@ -29,7 +29,7 @@ Notify-us uses a few number of tech stack to work properly:
 
 ## Installation
 
-Dillinger requires a modern browser only to run since its a web application.
+Notify-us requires a modern browser only to run since its a web application.
 
 ### To work on the open source version of this:
 Want to contribute? Great!
