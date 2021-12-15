@@ -1,11 +1,11 @@
-# Notfy-us
+# MyNotifi
 ## _An optimal and minimalist class-notification system_
 
 [![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-Notify-us is an online service, offline-storage compatible web application,
+MyNotifi is an online service, offline-storage compatible web application,
 Vue.JS-powered with Firebase Auth for authentication.
 
 - View classes for the day instantaneously
@@ -20,7 +20,7 @@ Vue.JS-powered with Firebase Auth for authentication.
 
 ## Tech
 
-Notify-us uses a few number of tech stack to work properly:
+MyNotifi uses a few number of tech stack to work properly:
 
 - [Vue.JS] - beautiful progressive javascript library!
 - [Firebase] - Online database providers by google.
@@ -29,7 +29,7 @@ Notify-us uses a few number of tech stack to work properly:
 
 ## Installation
 
-Notify-us requires a modern browser only to run since its a web application.
+MyNotifi requires a modern browser only to run since its a web application.
 
 ### To work on the open source version of this:
 Want to contribute? Great!
